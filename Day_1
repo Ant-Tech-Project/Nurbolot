@@ -1,0 +1,51 @@
+Introduction to Version Control and Git Basics
+
+1) Define version control 
+2) Explain the purpose and features of Git.
+3) Discuss the drawbacks of not using version control.
+4) Discuss the difference between centralized and distributed version control.
+5) How to install Git on different operating systems?
+6) Introduce fundamental commands such as git init, git add, git commit.
+7) Explain the concept of the staging area.
+
+1) Version Control. Controls the git commit,code changes,last version of commit,merges.It allows users to have access and view current working. View team members' actions in detail
+
+2) Explain the purpose and features of Git
+   User can see last version or convert to prev if needed
+   Distributed Development. Every user has their own copy of repo which means he can work in his env as copy of main repo
+   Branching and Merging. Git allows users to write their code in their repo and merge it to main codebase when it is ready.
+3)  Discuss the drawbacks of not using version control
+    Loss of History and Changes Without version control, developers have no systematic way of tracking changes made to the codebase over time. This makes it difficult to understand how the code has evolved, identify who made specific changes, or revert to previous versions if necessary
+    Risk of Data Loss Developers may overwrite or accidentally delete important files or code segments without the ability to retrieve previous versions. This can lead to irreversible data loss and significant setbacks in the development process.
+    Difficulty in Tracking Issues and Bugs Version control systems often integrate with issue tracking and bug reporting tools, allowing developers to link code changes with specific issues or bug fixes. Without version control, tracking and managing issues and bugs become more challenging and error-prone
+4)  Architecture.
+    CVCS. there is a central repository that stores the entire history of the project. Developers interact with this central repository to check out files, make changes, and commit them back to the repository
+    DVCS.  every developer has their own local repository, which contains the entire project history. This means that developers can work offline, commit changes to their local repository, and later synchronize their changes with other repositories.
+    Branching and Merging. 
+    CVCS. Branching and merging can be complex and sometimes error-prone due to the centralized nature of the repository
+    DVCS. Branching and merging are typically easier and more efficient in DVCS because developers can create branches locally, work on them independently, and later merge them back into the main repository
+    Workflow Flexibility
+    CVCS. Typically follows a more centralized workflow where developers collaborate directly on a shared codebase
+    DVCS. Supports various workflows, including centralized-like workflows where developers push changes to a shared repository, as well as decentralized workflows where developers maintain their own independent branches for experimentation before merging changes into a shared repository
+5)  How to install Git on different operating systems?
+    Installation Git on Windows
+    choco install git
+    Installation Git on MacOS
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install git
+    Istallation on Git on Linux
+     sudo apt update
+     sudo apt install git
+     sudo dnf install git     # For Fedora
+     sudo yum install git     # For RHEL/CentOS
+     sudo pacman -S git
+6)  git init 
+    Initializes a new Git repository in the current directory.
+    git add
+    Adds changes in the working directory to the staging area, preparing them to be committed.
+    git commit
+    Records changes in the staging area to the repository's history.
+7)  Staging area
+    The staging area, also known as the index, is a crucial concept in Git that serves as an intermediate step between the working directory and the repository. It allows you to selectively prepare changes before committing them to the repository's history. The staging area helps you organize and review your changes before they become part of the permanent record of your project's history
+    Staging area works between 'git add' and 'git commit' commands
+          
