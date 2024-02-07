@@ -1,0 +1,61 @@
+ Confict Resolution
+ 1) What can cause a conflict? 
+ Conflicts in Git occur when Git is unable to automatically merge two or more branches due to conflicting changes made to the same part of a file or files. Conflicts typically arise in the following scenarios:
+
+Modifying the Same Line(s): If two branches have changes to the same line(s) of a file, Git cannot automatically determine which change to keep. This results in a conflict that must be resolved manually.
+
+Deleting a File or Line vs. Modifying the Same File or Line: If one branch deletes a file or line while another branch modifies the same file or line, Git cannot automatically reconcile these changes, leading to a conflict.
+
+Renaming or Moving Files: If one branch renames or moves a file while another branch modifies the same file in its original location, Git may not be able to determine how to merge the changes, resulting in a conflict.
+
+Parallel Edits to the Same Section of a File: If two branches make non-overlapping changes to the same section of a file (for example, one branch adds content above a certain line while another branch adds content below it), Git will not detect a conflict because the changes are not conflicting.
+
+Merging Divergent Histories: When merging two branches with divergent commit histories, Git may encounter situations where it cannot determine the best way to integrate changes from both branches, resulting in conflicts.
+
+Uncommitted Changes: If there are uncommitted changes in the working directory when attempting to merge or pull changes from another branch, Git may refuse to perform the operation to prevent potential conflicts with the existing changes
+Git conflict resolution commands: git diff <conflicted_file>
+
+2) Cover strategies for conflict resolution
+
+When resolving conflicts in Git, there are several strategies you can employ to effectively manage and resolve conflicts. Here are some common strategies:
+
+Understanding the Conflict: Before attempting to resolve a conflict, it's essential to understand the nature of the conflict. Review the conflicting changes in the affected files to understand the differences between the conflicting versions.
+
+Communication: If you're collaborating with other developers, communication is key. Discuss the conflicting changes with your team members to understand their intentions and reach a consensus on how to resolve the conflict.
+
+Merge Tool: Use a visual merge tool (git mergetool) to help resolve conflicts interactively. Merge tools provide a graphical interface to compare conflicting changes and choose which changes to keep.
+
+Manual Resolution: For complex conflicts or conflicts that cannot be resolved using a merge tool, manual resolution may be necessary. Edit the conflicted files manually to incorporate the desired changes from both branches.
+
+Choose One Side: If you prefer to keep all changes from one branch and discard changes from the other branch, you can use git checkout --ours <conflicted_file> to keep changes from the current branch (--ours) or git checkout --theirs <conflicted_file> to keep changes from the branch being merged (--theirs).
+
+Combine Changes: In some cases, you may want to combine changes from both branches. Manually edit the conflicted files to incorporate the desired changes from both versions, keeping in mind the overall functionality and readability of the code.
+
+Resolve Conflicts Iteratively: If conflicts are widespread across multiple files, resolve conflicts iteratively, one file at a time. This approach allows you to focus on resolving conflicts in smaller chunks, making the process more manageable.
+
+Testing: After resolving conflicts, thoroughly test the merged code to ensure that the changes are integrated correctly and the functionality of the code is not compromised.
+
+Documentation: Document the resolution of conflicts, especially if the conflicts were resolved manually or if there were any significant decisions made during the conflict resolution process. This documentation can help maintain clarity and transparency in the project history.
+
+Committing Changes: Once conflicts are resolved, stage the resolved files using git add and commit the changes using git commit. Provide a clear and descriptive commit message that explains the resolution of conflicts.
+
+3)  Work in pairs: Create a new repo, create a conflict and practice conflict resolution
+4) Identify the Conflict: When you encounter a conflict, Git will notify you about the conflicted files. You can use the git status command to see which files have conflicts.
+
+Open the Conflicted File(s): Use a text editor or an integrated development environment (IDE) to open the conflicted file(s). Inside the file, Git marks the conflicting sections with special markers like <<<<<<<, =======, and >>>>>>>.
+
+Review the Conflicting Changes: Within the conflicted file, review the changes from both branches. The conflicting sections are marked with the special markers mentioned above, indicating the conflicting changes from the branch you're merging into (<<<<<<< HEAD), the common ancestor (=======), and the branch you're merging from (>>>>>>> branch).
+
+Resolve the Conflict: Decide how to resolve the conflict. You can choose to keep changes from one branch, combine changes from both branches, or make entirely new changes. Edit the conflicted sections to resolve the conflict according to your desired outcome.
+
+Remove the Conflict Markers: After resolving the conflict, remove the conflict markers (<<<<<<<, =======, >>>>>>>) and any unnecessary spacing or characters introduced by the conflict markers.
+
+Save the Changes: Save the changes to the conflicted file(s) after resolving the conflict.
+
+Stage the Resolved File(s): Once you've resolved the conflict in a file, stage the resolved file using the git add command.
+Check Status: After staging the resolved file(s), use git status to verify that the conflicts have been resolved and staged.
+
+Commit the Changes: After resolving all conflicts and staging the resolved files, commit the changes using git commit. Provide a meaningful commit message describing the resolution of conflicts.
+Repeat for Each Conflicted File: If there are multiple conflicted files, repeat the above steps for each conflicted file until all conflicts are resolved.
+
+Finalize the Merge: After resolving all conflicts and committing the changes, you can finalize the merge process by completing the merge operation using git merge --continue.
