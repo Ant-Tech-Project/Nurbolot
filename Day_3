@@ -1,4 +1,4 @@
- Confict Resolution
+
  1) What can cause a conflict? 
  Conflicts in Git occur when Git is unable to automatically merge two or more branches due to conflicting changes made to the same part of a file or files. Conflicts typically arise in the following scenarios:
 
