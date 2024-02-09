@@ -45,7 +45,8 @@ Introduction to Version Control and Git Basics
     Adds changes in the working directory to the staging area, preparing them to be committed.
     git commit
     Records changes in the staging area to the repository's history.
-7)  Staging area
+7)  Staging area : locally
+ANother line of code added to the file
     The staging area, also known as the index, is a crucial concept in Git that serves as an intermediate step between the working directory and the repository. It allows you to selectively prepare changes before committing them to the repository's history. The staging area helps you organize and review your changes before they become part of the permanent record of your project's history
     Staging area works between 'git add' and 'git commit' commands
           
